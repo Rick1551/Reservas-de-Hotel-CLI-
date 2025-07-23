@@ -1,0 +1,45 @@
+# Build directories
+build/
+out/
+x64/
+Debug/
+Release/
+ipch/
+*.sln
+*.vcxproj*
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.sdf
+*.opensdf
+*.db
+*.tlog
+*.log
+*.ilk
+*.pdb
+*.obj
+
+# Executables
+*.exe
+*.out
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+
+# Data files (opcional)
+data/*.json
+!data/.gitkeep  # Para mantener la carpeta
+
+# Editor/IDE specific
+.vs/
+.idea/
+.vscode/
+*.code-workspace
+
+# System files
+.DS_Store
+Thumbs.db
