@@ -2,19 +2,16 @@
 #include "..\include\Habitacion.hpp"
 
 void Habitacion::serializarJSON(std::ostream& os) const {
-	os << "{\n"
-		<< "  \"numero\": " << numero << ",\n"
-		<< "  \"precio_por_noche\": " << precio_por_noche << ",\n"
-		<< "  \"tipo\": \"" << tipo << "\",\n"
-		<< "  \"disponible\": \"" << disponible << "\"\n"
-		<< "}";
+	json j;
+	j["numero"] = numero_;
+	j["precio"] = precio_por_noche;
 }
 
 void Habitacion::cargarDesdeJSON(const std::string& json) {
 	
-	// Aquí podrías usar una librería JSON para parsear el string
+	// Aquï¿½ podrï¿½as usar una librerï¿½a JSON para parsear el string
 	// Por simplicidad, solo imprimimos el JSON recibido
-	// En un caso real, deberías parsear el JSON y asignar los valores a los atributos de la clase
+	// En un caso real, deberï¿½as parsear el JSON y asignar los valores a los atributos de la clase
 	// Por ejemplo, usando nlohmann::json:
 	//nlohmann::json j = nlohmann::json::parse(json);
 	//numero = j["numero"];

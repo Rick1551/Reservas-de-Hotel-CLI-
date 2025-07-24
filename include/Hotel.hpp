@@ -3,6 +3,7 @@
 #include <map>
 #include "../include/Habitacion.hpp"
 #include "../include/json.hpp"
+#include "../include/Reserva.hpp"
 
 class Hotel {
 	private:
