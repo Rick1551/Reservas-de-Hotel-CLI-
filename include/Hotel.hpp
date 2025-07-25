@@ -7,10 +7,10 @@
 
 class Hotel {
 	private:
-		std::string nombre;
-		std::string direccion;
-		std::vector<Habitacion> habitaciones;
-		std::map<std::string, Reserva> reservas; // Mapa de reservas por ID
+		std::string nombre_;
+		std::string direccion_;
+		std::vector<Habitacion> habitaciones_;
+		std::map<std::string, Reserva> reservas_; // Mapa de reservas por ID
 
 	public:
 		void buscarHabitacionesDisponibles(const std::string& tipo, const std::string& fecha_entrada, const std::string& fecha_salida) const;

@@ -4,20 +4,19 @@
 void Habitacion::serializarJSON(std::ostream& os) const {
 	json j;
 	j["numero"] = numero_;
-	j["precio"] = precio_por_noche;
+	j["precio"] = precio_por_noche_;
+	j["tipo"] = tipo_;
+	j["disponible"] = disponible_;
+	os << j.dump(2);
 }
 
 void Habitacion::cargarDesdeJSON(const std::string& json) {
 	
-	// Aqu� podr�as usar una librer�a JSON para parsear el string
-	// Por simplicidad, solo imprimimos el JSON recibido
-	// En un caso real, deber�as parsear el JSON y asignar los valores a los atributos de la clase
-	// Por ejemplo, usando nlohmann::json:
-	//nlohmann::json j = nlohmann::json::parse(json);
-	//numero = j["numero"];
-	//precio_por_noche = j["precio_por_noche"];
-	//tipo = j["tipo"];
-	//disponible = j["disponible"];
+	nlohmann::json j = nlohmann::json::parse(json);
+	numero_ = j["numero"];
+	precio_por_noche_ = j["precio_por_noche"];
+	tipo_ = j["tipo"];
+	disponible_ = j["disponible"];
 
-	std::cout << "Cargando desde JSON: " << json << std::endl;
+	//std::cout << "Cargando desde JSON: " << json << std::endl;
 }
