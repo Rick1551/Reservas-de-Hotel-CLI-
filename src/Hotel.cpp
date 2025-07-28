@@ -98,6 +98,26 @@ void Hotel::cargarEstadoDesdeJSON(const std::string& archivo) {
 		}
 
 		//Cargar reservas
-		if
+		if(j.contains("reservas")) {
+			reservas_.clear();
+			for (const auto& item : j["reservas"]) {
+				try {
+					reservas_.try_emplace(
+						item.at("id").get<std::string>(),
+						item.at("habitacion_numero").get<int>(),
+						item.at("fecha_entrada").get<std::string>(),
+						item.at("fecha_salida").get<std::string>()
+					);
+				} catch (const json::exception& e) {
+					std::cerr << "Error al cargar reserva: " << e.what() << "\n";
+				}
+			}
+		}
+
+	}catch (const json::parse_error& e) {
+		throw std::runtime_error("Error al parsear el archivo JSON: " + std::string(e.what()));
+	}
+	catch (const std::exception& e) {
+		throw std::runtime_error("Error inesperado: " + std::string(e.what()));
 	}
 }
