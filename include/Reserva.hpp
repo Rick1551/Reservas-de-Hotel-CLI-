@@ -7,8 +7,8 @@ class Reserva {
 	int id_, id_habitacion_;
 	std::string cliente_;
 	std::string estado_;
-	std::chrono::year_month_day fecha_entrada;
-	std::chrono::year_month_day fecha_salida;
+	std::chrono::year_month_day fecha_entrada_;
+	std::chrono::year_month_day fecha_salida_;
 
 	void validarFechas() const;
 
