@@ -17,9 +17,9 @@ int main() {
 	std::string json = "{\"numero\": 102, \"precio_por_noche\": 85.0, \"tipo\": \"Suite\", \"disponible\": \"No disponible\"}";
 	habitacion.cargarDesdeJSON(json);
 	// Crear un hotel y agregar la habitaci�n
-	Hotel hotel("Hotel Ejemplo", "123 Calle Ficticia");
-	hotel.agregarHabitacion(habitacion);
+	//Hotel hotel("Hotel Ejemplo", "123 Calle Ficticia");
+	//hotel.agregarHabitacion(habitacion);
 	// Mostrar las habitaciones del hotel
-	hotel.mostrarHabitaciones();
+	//hotel.mostrarHabitaciones();
 	return 0;
 }
